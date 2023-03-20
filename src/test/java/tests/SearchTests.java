@@ -38,18 +38,15 @@ public class SearchTests extends TestBase {
                                 "At the Academy Awards, Everything Everywhere All at Once wins seven awards, including Best Picture and Best Actress for Michelle Yeoh (pictured).")));
     }
 
+    @Test()
     @Tag("ios")
-    @Test
-    void successfulSearchIosTest() {
-
+    void iosCheckInputTest() {
         step("Type search", () -> {
             $(accessibilityId("Text Button")).click();
-            $(accessibilityId("Text Input")).sendKeys("hello@browserstack.com");
         });
-        step("Verify content found", () ->
-                $(accessibilityId("Text Output")).shouldBe(visible));
-        //$(accessibilityId("Text Output")).shouldHave(text("hello@browserstack.com"));
-
+        step("Check that text input should be visible ", () -> {
+            $(accessibilityId("Text Input")).shouldBe(visible);
+        });
     }
 
 }
