@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.SearchTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-03-20T18:44:52" hostname="DESKTOP-T1L377U" time="0.439">
+<testsuite name="tests.SearchTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-03-20T18:51:30" hostname="DESKTOP-T1L377U" time="0.378">
   <properties/>
-  <testcase name="openTheLinkTest()" classname="tests.SearchTests" time="0.439">
+  <testcase name="successfulSearchTest()" classname="tests.SearchTests" time="0.378">
     <failure message="java.lang.RuntimeException: java.net.MalformedURLException: Cannot invoke &quot;String.length()&quot; because &quot;spec&quot; is null" type="java.lang.RuntimeException">java.lang.RuntimeException: java.net.MalformedURLException: Cannot invoke &quot;String.length()&quot; because &quot;spec&quot; is null
 	at drivers.BrowserstackMobileDriver.getBrowserstackUrl(BrowserstackMobileDriver.java:62)
 	at drivers.BrowserstackMobileDriver.createDriver(BrowserstackMobileDriver.java:56)
@@ -181,6 +181,6 @@ Caused by: java.lang.NullPointerException: Cannot invoke &quot;String.length()&q
   </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 16 - let's create a new webdriver
-[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: C:\Users\Artem\Desktop\qaguru_mobile\build\downloads\1679337892600_10812_16
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: C:\Users\Artem\Desktop\qaguru_mobile\build\downloads\1679338290205_19372_16
 ]]></system-err>
 </testsuite>

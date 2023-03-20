@@ -45,20 +45,20 @@ dependencies {
 }
 
 test {
-//    systemProperties(System.getProperties())
+    systemProperties(System.getProperties())
     useJUnitPlatform()
 }
 
-//task android_test(type: Test) {
-//    useJUnitPlatform {
-//        includeTags("android")
-//    }
-//    systemProperties(System.getProperties())
-//}
-//
-//task ios_test(type: Test) {
-//    useJUnitPlatform {
-//        includeTags("ios")
-//    }
-//    systemProperties(System.getProperties())
-//}
+task android_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("android")
+    }
+    systemProperties(System.getProperties())
+}
+
+task ios_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("ios")
+    }
+    systemProperties(System.getProperties())
+}
