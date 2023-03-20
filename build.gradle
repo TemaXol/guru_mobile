@@ -49,14 +49,14 @@ test {
     useJUnitPlatform()
 }
 
-task android_test(type: Test) {
+task android(type: Test) {
     useJUnitPlatform {
         includeTags("android")
     }
     systemProperties(System.getProperties())
 }
 
-task ios_test(type: Test) {
+task ios(type: Test) {
     useJUnitPlatform {
         includeTags("ios")
     }
