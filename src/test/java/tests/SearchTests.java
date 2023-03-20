@@ -42,10 +42,12 @@ public class SearchTests extends TestBase {
     @Tag("ios")
     void iosCheckInputTest() {
         step("Type search", () -> {
-            $(accessibilityId("Text Button")).click();
+            $(accessibilityId("Search Wikipedia")).click();
+            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("java");
         });
-        step("Check that text input should be visible ", () -> {
-            $(accessibilityId("Text Input")).shouldBe(visible);
+        step("Verify content", () -> {
+            $$(id("org.wikipedia.alpha:id/page_list_item_title"))
+                    .shouldHave(sizeGreaterThan(0));
         });
     }
 
