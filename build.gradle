@@ -26,6 +26,8 @@ repositories {
     mavenCentral()
 }
 
+def slf4jVersion = "1.7.32"
+
 dependencies {
     testImplementation(
             "com.codeborne:selenide:6.11.2",
