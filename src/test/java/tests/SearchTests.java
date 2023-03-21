@@ -52,7 +52,7 @@ public class SearchTests extends TestBase {
             $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).click();
         });
         step("Verify content", () -> {
-            $(id("org.wikipedia.alpha:id/action_bar")).shouldHave(text("Settings"));
+            $(id("org.wikipedia.alpha:id/list")).shouldHave(text("General"));
         });
 
     }
