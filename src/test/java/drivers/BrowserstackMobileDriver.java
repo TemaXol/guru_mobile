@@ -16,13 +16,13 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    static DriverConfig config = ConfigFactory.create(DriverConfig.class, System.getProperties());
+    DriverConfig config = ConfigFactory.create(DriverConfig.class, System.getProperties());
     @SneakyThrows
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
 
-        this.config = ConfigFactory.create(DriverConfig.class, System.getProperties());
+        config = ConfigFactory.create(DriverConfig.class, System.getProperties());
 
         MutableCapabilities mutableCapabilities = new DesiredCapabilities();
         mutableCapabilities.merge(capabilities);
