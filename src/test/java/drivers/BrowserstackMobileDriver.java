@@ -45,22 +45,22 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         
         // Initialise the remote Webdriver using BrowserStack remote URL
         // and desired mutableCapabilities defined above
-//        try {
-//            return new RemoteWebDriver(
-//                     new URL(config.getBaseUrl()), mutableCapabilities);
-//        } catch (MalformedURLException e) {
-//
-//           throw new RuntimeException(e);
-//        }
-//    }
-
-        return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
-}
-    public static URL getBrowserstackUrl() {
         try {
-            return new URL(config.getBaseUrl());
+            return new RemoteWebDriver(
+                     new URL(config.getBaseUrl()), mutableCapabilities);
         } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
+
+           throw new RuntimeException(e);
         }
     }
+
+//        return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
+//}
+//    public static URL getBrowserstackUrl() {
+//        try {
+//            return new URL(config.getBaseUrl());
+//        } catch (MalformedURLException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 }
