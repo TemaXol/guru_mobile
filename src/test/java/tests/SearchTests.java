@@ -67,4 +67,5 @@ public class SearchTests extends TestBase {
         });
         step("Verify content found", () ->
                 $(accessibilityId("Text Output")).shouldBe(visible));
+    }
 }
