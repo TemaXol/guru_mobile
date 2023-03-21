@@ -48,8 +48,8 @@ public class SearchTests extends TestBase {
             $(id("org.wikipedia.alpha:id/menu_overflow_button")).click();
         });
         step("Check button log in", () -> {
-            $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).shouldHave(text("Settings"));
-            $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).click();
+            $(id("org.wikipedia.alpha:id/explore_overflow_settings")).shouldHave(text("Settings"));
+            $(id("org.wikipedia.alpha:id/explore_overflow_settings")).click();
         });
         step("Verify content", () -> {
             $(id("org.wikipedia.alpha:id/list")).shouldHave(text("General"));
