@@ -29,7 +29,7 @@ public class SearchTests extends TestBase {
 
     @Tag("android")
     @Test
-    void CheckButtonLogIn() {
+    void CheckGoogle() {
 
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
@@ -39,6 +39,22 @@ public class SearchTests extends TestBase {
             $$(id("org.wikipedia.alpha:id/page_list_item_title"))
                     .shouldHave(sizeGreaterThan(0));
         });
+    }
+
+    @Test()
+    @Tag("android")
+    void checkSettingsTest() {
+        step("Type search", () -> {
+            $(accessibilityId("org.wikipedia.alpha:id/menu_overflow_button")).click();
+        });
+        step("Check button log in", () -> {
+            $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).shouldHave(text("Settings"));
+            $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).click();
+        });
+        step("Verify content", () -> {
+            $(id("org.wikipedia.alpha:id/action_bar")).shouldHave(text("Settings"));
+        });
+
     }
 
     @Test()
