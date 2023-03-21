@@ -60,16 +60,11 @@ public class SearchTests extends TestBase {
     @Test()
     @Tag("ios")
     void loginTestFlight() {
-        step("Type search", () -> {
-            $(accessibilityId("org.wikipedia.alpha:id/menu_overflow_button")).click();
-        });
-        step("Check button log in", () -> {
-            $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).shouldHave(text("Settings"));
-            $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).click();
-        });
-        step("Verify content", () -> {
-            $(id("org.wikipedia.alpha:id/action_bar")).shouldHave(text("Settings"));
-        });
 
-    }
+        step("Type search", () -> {
+            $(accessibilityId("Text Button")).click();
+            $(accessibilityId("Text Input")).sendKeys("test@browserstack.com");
+        });
+        step("Verify content found", () ->
+                $(accessibilityId("Text Output")).shouldBe(visible));
 }
