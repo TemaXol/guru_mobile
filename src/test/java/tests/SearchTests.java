@@ -43,14 +43,17 @@ public class SearchTests extends TestBase {
 
     @Test()
     @Tag("ios")
-    void loginTestFlight (){
+    void loginTestFlight() {
         step("Type search", () -> {
-            $(accessibilityId("Search Wikipedia")).click();
-            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("dodo pizza");
+            $(accessibilityId("org.wikipedia.alpha:id/menu_overflow_button")).click();
+        });
+        step("Check button log in", () -> {
+            $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).shouldHave(text("Settings"));
+            $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).click();
         });
         step("Verify content", () -> {
-            $$(id("org.wikipedia.alpha:id/page_list_item_title"))
-                    .shouldHave(sizeGreaterThan(0));
+            $(id("org.wikipedia.alpha:id/action_bar")).shouldHave(text("Settings"));
         });
 
+    }
 }
