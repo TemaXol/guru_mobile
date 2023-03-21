@@ -17,16 +17,8 @@ public class TestBase {
     public static String env = System.getProperty("env");
 
     @BeforeAll
-    public static void setDriver(){
-        switch (env) {
-            case "emulation":
-            case "ios":
-                Configuration.browser = BrowserstackMobileDriver.class.getName();
-                break;
-            case "android":
-                Configuration.browser = BrowserstackMobileDriver.class.getName();
-                break;
-        }
+    static void beforeAll() {
+
             Configuration.browser = BrowserstackMobileDriver.class.getName();
             Configuration.browserSize = null;
 
