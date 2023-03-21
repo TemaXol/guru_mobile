@@ -2,6 +2,7 @@ package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import config.DriverConfig;
+import lombok.SneakyThrows;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
@@ -16,7 +17,7 @@ import java.net.URL;
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
     static DriverConfig config = ConfigFactory.create(DriverConfig.class, System.getProperties());
-
+    @SneakyThrows
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
