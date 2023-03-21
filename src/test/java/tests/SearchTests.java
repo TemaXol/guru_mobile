@@ -45,7 +45,7 @@ public class SearchTests extends TestBase {
     @Tag("android")
     void checkSettingsTest() {
         step("Type search", () -> {
-            $(accessibilityId("org.wikipedia.alpha:id/menu_overflow_button")).click();
+            $(id("org.wikipedia.alpha:id/menu_overflow_button")).click();
         });
         step("Check button log in", () -> {
             $(id("org.wikipedia.alpha:id/explore_overflow_account_name")).shouldHave(text("Settings"));
