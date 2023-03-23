@@ -51,14 +51,14 @@ tasks.withType(Test) {
 
 task android(type: Test) {
     useJUnitPlatform {
-        includeTags'android'
+        includeTags 'android'
     }
     systemProperties(System.getProperties())
 }
 
 task ios(type: Test) {
     useJUnitPlatform {
-        includeTags'ios'
+        includeTags 'ios'
     }
     systemProperties(System.getProperties())
 }

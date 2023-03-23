@@ -19,27 +19,25 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
 
-            Configuration.browser = BrowserstackMobileDriver.class.getName();
-            Configuration.browserSize = null;
-
-        }
-
-
-        @BeforeEach
-        void addListener () {
-            SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-            open();
-        }
-
-        @AfterEach
-        void afterEach () {
-            String sessionId = Selenide.sessionId().toString();
-
-//        Attach.screenshotAs("Last screen");
-//        Attach.pageSource();
-            closeWebDriver();
-//        Attach.addVideo(sessionId);
-        }
-
+        Configuration.browser = BrowserstackMobileDriver.class.getName();
+        Configuration.browserSize = null;
     }
+
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        open();
+    }
+
+    @AfterEach
+    void afterEach() {
+        String sessionId = Selenide.sessionId().toString();
+
+        Attach.screenshotAs("Last screen");
+        Attach.pageSource();
+        closeWebDriver();
+        Attach.addVideo(sessionId);
+    }
+
+}
 
