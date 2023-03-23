@@ -26,7 +26,8 @@ repositories {
     mavenCentral()
 }
 
-def slf4jVersion = "1.7.32"
+def allureVersion = "2.19.0",
+    slf4jVersion = "1.7.36"
 
 dependencies {
     testImplementation(
