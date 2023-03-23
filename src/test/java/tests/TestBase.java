@@ -37,7 +37,7 @@ public class TestBase {
         Attach.screenshotAs("Last screen");
         Attach.pageSource();
         closeWebDriver();
-//        Attach.addVideo(sessionId);
+        Attach.addVideo(sessionId);
     }
 
 }
