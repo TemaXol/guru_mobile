@@ -2,6 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -28,7 +29,7 @@ public class SearchTests extends TestBase {
 
     @Tag("android")
     @Test
-    void CheckGoogle() {
+    void checkGoogle() {
 
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
@@ -53,7 +54,6 @@ public class SearchTests extends TestBase {
         step("Verify content", () -> {
             $(id("android:id/title")).shouldHave(text("Wikipedia language"));
         });
-
     }
 
     @Test()
